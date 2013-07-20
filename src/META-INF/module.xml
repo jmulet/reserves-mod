@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<root>
+    <module jar="org-iesapp-modules-reserves.jar" class="org.iesapp.modules.reserves.ReservesModule" autoStart="no" multipleInstance="no" closable="yes">
+        <anchor location="menu" parentId="jMenuModules"/>
+        <anchor location="toolbar" parentId="jToolBarModules"/>
+        <display location="topwindow" parentId="center"/>
+        <bundle>
+            <locale key="title" value="ca"><![CDATA[Reserves]]></locale>
+            <locale key="title" value="es"><![CDATA[Reservas]]></locale>
+            <locale key="title" value="default"><![CDATA[Reservations]]></locale>
+            <locale key="description" value="default" ><![CDATA[This module allows to make reservations of rooms and material]]></locale>
+        </bundle>
+        <metaINF author="Josep Mulet Pol (c) 2012" version="1.4" dependencies=""/>
+    </module>    
+</root>
