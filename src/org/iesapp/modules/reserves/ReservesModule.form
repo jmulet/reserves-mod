@@ -52,7 +52,7 @@
                   <EmptySpace min="-2" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Component id="jPanelCerca" alignment="0" max="32767" attributes="2"/>
-                      <Component id="jScrollPane1" alignment="0" pref="486" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" alignment="0" max="32767" attributes="0"/>
                       <Component id="jPanel8" alignment="0" max="32767" attributes="2"/>
                   </Group>
                   <EmptySpace min="-2" max="-2" attributes="0"/>
@@ -175,6 +175,9 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Tahoma" size="12" style="1"/>
             </Property>
+            <Property name="foreground" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+              <Color blue="cc" green="0" red="0" type="rgb"/>
+            </Property>
             <Property name="text" type="java.lang.String" editor="org.netbeans.modules.i18n.form.FormI18nStringEditor">
               <ResourceString bundle="org/iesapp/modules/reserves/ReservesBundle.properties" key="myreservations" replaceFormat="java.util.ResourceBundle.getBundle(&quot;{bundleNameSlashes}&quot;).getString(&quot;{key}&quot;)"/>
             </Property>
@@ -215,7 +218,7 @@
       <SubComponents>
         <Component class="javax.swing.JTable" name="jTable0">
           <Properties>
-            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="String[] icons0 = new String[]{&quot;/org/iesapp/modules/reserves/icons/blank.gif&quot;,&#xa;            &quot;/org/iesapp/modules/reserves/icons/delete.gif&quot;&#xa;        };&#xa;jTable0.getColumnModel().getColumn(0).setCellRenderer(new MyIconLabelRenderer(icons0));&#xa;jTable0.getColumnModel().getColumn(1).setCellRenderer(new TextAreaRenderer());&#xa;        jTable0.getColumnModel().getColumn(3).setCellRenderer(new MyIconLabelRenderer(icons0));&#xa;        jTable0.getColumnModel().getColumn(4).setCellRenderer(new CellDateRenderer());&#xa;        jTable0.getColumnModel().getColumn(5).setCellRenderer(new MyIconLabelRenderer(icons0));&#xa;        jTable0.getColumnModel().getColumn(6).setCellRenderer(new TextAreaRenderer());&#xa;        jTable0.getColumnModel().getColumn(1).setPreferredWidth(150);&#xa;        jTable0.getColumnModel().getColumn(3).setPreferredWidth(220);&#xa;        jTable0.getColumnModel().getColumn(5).setPreferredWidth(150);&#xa;        jTable0.setRowHeight(32);">
+            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.RADConnectionPropertyEditor" postCode="jTable0.getColumnModel().getColumn(0).setCellRenderer(new MyIconLabelRenderer(icons0));&#xa;jTable0.getColumnModel().getColumn(1).setCellRenderer(new TextAreaRenderer());&#xa;jTable0.getColumnModel().getColumn(3).setCellRenderer(new MyIconLabelRenderer(icons0));&#xa;        jTable0.getColumnModel().getColumn(4).setCellRenderer(new CellDateRenderer());&#xa;        jTable0.getColumnModel().getColumn(5).setCellRenderer(new MyIconLabelRenderer(icons0));&#xa;        jTable0.getColumnModel().getColumn(6).setCellRenderer(new TextAreaRenderer());&#xa;        jTable0.getColumnModel().getColumn(1).setPreferredWidth(150);&#xa;        jTable0.getColumnModel().getColumn(3).setPreferredWidth(220);&#xa;        jTable0.getColumnModel().getColumn(5).setPreferredWidth(150);&#xa;        jTable0.setRowHeight(32);">
               <Connection code="modelTable0" type="code"/>
             </Property>
             <Property name="autoResizeMode" type="int" value="0"/>

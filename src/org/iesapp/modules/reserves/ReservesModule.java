@@ -14,6 +14,7 @@ import java.util.Date;
 import java.util.ResourceBundle;
 import javax.help.CSH;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.Icon;
 import javax.swing.ImageIcon;
 import javax.swing.JMenuBar;
 import javax.swing.JOptionPane;
@@ -31,6 +32,8 @@ import org.iesapp.framework.table.CellDateRenderer;
 import org.iesapp.framework.table.CellTableState;
 import org.iesapp.framework.table.MyIconLabelRenderer;
 import org.iesapp.framework.table.TextAreaRenderer;
+import org.iesapp.framework.util.IconUtils;
+import org.iesapp.framework.util.JarClassLoader;
 import org.iesapp.framework.util.wizard.Wizard;
 import org.iesapp.modules.reserves.util.Cfg;
 import org.iesapp.modules.reserves.util.MySorter;
@@ -65,6 +68,7 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
     public static ArrayList<BeanProfessor> listProfessors;
     public static ArrayList<BeanMaterial> listMaterials;
     public static ArrayList<BeanEspai> listEspais;
+    private final Icon[] icons0;
 
     
     /**
@@ -75,8 +79,16 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
         this.moduleName = "reserves";
         this.moduleDisplayName = bundle.getString("reserves");
         this.moduleDescription = bundle.getString("descripcio");
+        icons0 = new Icon[]{
+            IconUtils.getBlankIcon(), IconUtils.getDeleteIcon()
+        };
+    }
+    
+    //All code after constructor (pointers are initialized here)
+    @Override
+    public void postInitialize() {
+
         initComponents();
-        
         ActionListener novaAction = new ActionListener()
         {
            public void actionPerformed(ActionEvent e) {
@@ -103,12 +115,6 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
        // modelCombo1.addElement("PREFECTURA [PREF]");
         modelCombo1.addElement("GUARDIES [GUARD]");
         jComboBox1.setModel(modelCombo1);
-                
-    }
-    
-    //All code after constructor (pointers are initialized here)
-    @Override
-    public void postInitialize() {
 
         CSH.setHelpIDString(jButton1,"org-iesapp-modules-reserves-nova");
         
@@ -377,6 +383,7 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
         jPanel8.setLayout(new java.awt.FlowLayout(java.awt.FlowLayout.LEFT));
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel2.setForeground(new java.awt.Color(0, 0, 204));
         jLabel2.setText(bundle.getString("myreservations")); // NOI18N
         jPanel8.add(jLabel2);
 
@@ -406,9 +413,6 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
             }
         );
         jTable0.setModel(modelTable0);
-        String[] icons0 = new String[]{"/org/iesapp/modules/reserves/icons/blank.gif",
-            "/org/iesapp/modules/reserves/icons/delete.gif"
-        };
         jTable0.getColumnModel().getColumn(0).setCellRenderer(new MyIconLabelRenderer(icons0));
         jTable0.getColumnModel().getColumn(1).setCellRenderer(new TextAreaRenderer());
         jTable0.getColumnModel().getColumn(3).setCellRenderer(new MyIconLabelRenderer(icons0));
@@ -449,7 +453,7 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
                     .addContainerGap()
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(jPanelCerca, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 486, Short.MAX_VALUE)
+                        .addComponent(jScrollPane1)
                         .addComponent(jPanel8, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addContainerGap()))
         );
@@ -678,9 +682,6 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
                     bundle.getString("Hora"), bundle.getString("Motiu")
                     });
             jTable0.setModel(modelTable0);
-            String[] icons0 = new String[]{"/org/iesapp/modules/reserves/icons/blank.gif",
-                "/org/iesapp/modules/reserves/icons/delete.gif"
-            };
             jTable0.getColumnModel().getColumn(0).setCellRenderer(new MyIconLabelRenderer(icons0));
             jTable0.getColumnModel().getColumn(1).setCellRenderer(new TextAreaRenderer());
             jTable0.getColumnModel().getColumn(3).setCellRenderer(new MyIconLabelRenderer(icons0));
@@ -700,9 +701,6 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
                      bundle.getString("Data"), bundle.getString("Hora"), bundle.getString("Motiu")
                     });
             jTable0.setModel(modelTable0);
-            String[] icons0 = new String[]{"/org/iesapp/modules/reserves/icons/blank.gif",
-                "/org/iesapp/modules/reserves/icons/delete.gif"
-            };
             jTable0.getColumnModel().getColumn(0).setCellRenderer(new MyIconLabelRenderer(icons0));
             jTable0.getColumnModel().getColumn(2).setCellRenderer(new MyIconLabelRenderer(icons0));
             jTable0.getColumnModel().getColumn(3).setCellRenderer(new CellDateRenderer());
