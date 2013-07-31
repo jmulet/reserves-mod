@@ -82,13 +82,18 @@ public class ReservesModule extends org.iesapp.framework.pluggable.TopModuleWind
         icons0 = new Icon[]{
             IconUtils.getBlankIcon(), IconUtils.getDeleteIcon()
         };
-    }
+        
+     }
     
     //All code after constructor (pointers are initialized here)
     @Override
     public void postInitialize() {
 
         initComponents();
+        jTable0.setIntercellSpacing( new java.awt.Dimension(2,2) );
+        jTable0.setGridColor(java.awt.Color.gray);
+        jTable0.setShowGrid(true);
+  
         ActionListener novaAction = new ActionListener()
         {
            public void actionPerformed(ActionEvent e) {

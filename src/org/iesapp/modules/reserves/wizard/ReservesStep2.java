@@ -25,9 +25,8 @@ public class ReservesStep2 extends javax.swing.JPanel {
         this.coreCfg = coreCfg;
         initComponents();
         Calendar cal = Calendar.getInstance();
-        cal.add(Calendar.DAY_OF_MONTH, 1);
+        //cal.add(Calendar.DAY_OF_MONTH, 1);
         java.util.Date min = cal.getTime();
-        
         java.util.Date max = null;
         if(coreCfg.getUserInfo().getGrant()!=User.ADMIN && coreCfg.getUserInfo().getGrant()!=User.PREF)
         {
